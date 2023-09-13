@@ -1,0 +1,7 @@
+.idea/
+__pycache__/
+blog_data.json
+manage.py
+static/
+templates/
+
