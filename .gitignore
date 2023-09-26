@@ -7,4 +7,8 @@ templates/
 .env
 media/
 schema.yml
+accounts/migrations
+blog/migrations
+api/migrations
+
 
