@@ -4,4 +4,7 @@ blog_data.json
 manage.py
 static/
 templates/
+.env
+media/
+schema.yml
 

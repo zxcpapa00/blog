@@ -46,8 +46,12 @@ class PostDetailView(DetailView):
 @require_POST
 def create_comment(request, post_slug):
     post = Post.published.get(slug=post_slug)
-    form = CommentForm(request.POST)
+    comment_post = request.POST.copy()
     comment = None
+    if request.user.is_authenticated:
+        comment_post['name'] = request.user.username
+        comment_post['email'] = request.user.email
+    form = CommentForm(data=comment_post, files=request.FILES)
     if form.is_valid():
         comment = form.save(commit=False)
         comment.post = post

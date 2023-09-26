@@ -26,6 +26,7 @@ class Post(models.Model):
 
     tags = TaggableManager()
     published = PublishManager()
+    objects = models.Manager()
 
     publish = models.DateTimeField(default=timezone.now)  # поле дата публикации
     created = models.DateTimeField(auto_now_add=True)  # поле дата создания
